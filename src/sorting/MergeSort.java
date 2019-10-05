@@ -16,31 +16,25 @@ public class MergeSort implements Sort{
     //TODO - need to fix merge method
     private static void merge(int[] arr, int start, int mid, int end ){
 
-        int [] res = new int[arr.length];
-        int i = start;
-        int j= mid+1;
+        int[] temp = new int[end-start+1];
+        int k=0;
+        int p = start;
+        int q = mid+1;
 
-            while(arr[i]<arr[j]){
-                arr[i] = arr[i];
-                i++;
-            }
+        for(int i=start; i<=end; i++){
+            if(p>mid)temp[k++]=arr[q++]; //if first arr ends
+            else if(q>end) temp[k++]=arr[p++]; //if 2nd array ends
 
-            while (arr[j]<arr[i]){
-                arr[i]=arr[j];
-                i++;
-                j++;
+            else if(arr[p]<arr[q]){
+                temp[k++] = arr[p++];
             }
-        if(i<=mid){
-            arr[i]=arr[i];
-            i++;
-        }
-        if(j<=end){
-            arr[i]=arr[j];
-            i++;
+            else{
+                temp[k++] = arr[q++];
+            }
         }
 
-
-
+        for (int i=0; i<k; i++) {
+            arr[start++] = temp[i];
+        }
     }
-
 }

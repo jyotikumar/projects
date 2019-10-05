@@ -11,11 +11,13 @@ public class SortRunner {
         Sort selectionSort = new SelectionSort();
         Sort bubbleSort = new BubbleSort();
         Sort insertionSort = new InsertionSort();
+        Sort mergeSort = new MergeSort();
 
 //        quickSort.sorting(arr, 0, arr.length-1);
 //        selectionSort.sorting(arr, 0, arr.length - 1);
 //        bubbleSort.sorting(arr, 0, arr.length - 1);
-        insertionSort.sort(arr, 0, arr.length-1);
+//        insertionSort.sort(arr, 0, arr.length-1);
+        mergeSort.sort(arr, 0, arr.length-1);
         printArray(arr);
     }
 
