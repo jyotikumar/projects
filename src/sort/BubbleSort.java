@@ -1,6 +1,6 @@
 package sort;
 
-import static utilility.Util.swap;
+import static utility.Util.swap;
 
 public class BubbleSort implements Sort {
     @Override
