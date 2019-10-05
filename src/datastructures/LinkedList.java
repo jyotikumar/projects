@@ -1,6 +1,6 @@
 package datastructures;
 
-public class LList {
+public class LinkedList {
     Node head;
 
     void insertAtBeginning(int data){
@@ -87,15 +87,6 @@ public class LList {
         System.out.println(temp.data);
     }
 
-    class Node{
-        int data;
-        Node next;
-        Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-    }
-
     void addNodes(int[] nodes) {
         for(int data : nodes){
             addNode(data);
@@ -131,31 +122,7 @@ public class LList {
         preNode.next = null;
     }
 
-    public static void main(String[] args) {
-        LList linkedList = new LList();
-        int [] nodes = {24, 83, 44, 12};
-        linkedList.addNodes(nodes);
-        linkedList.insertAtBeginning(37);
-        linkedList.insertAtEnd(28);
-        linkedList.insertAtEnd(33);
-        linkedList.insertAtBeginning(20);
+    void reverseList(){
 
-        //Test Result
-        linkedList.printList();
-        System.out.println(linkedList.findMiddlePosition());
-        System.out.println(linkedList.findNthNode(linkedList.findMiddlePosition()));
-
-        linkedList.insertAtNthPosition(3, 29);
-        linkedList.printList();
-        linkedList.insertInMiddle(18);
-        linkedList.printList();
-        System.out.println(linkedList.findNthNode(7));
-
-        linkedList.deleteFirstNode();
-        linkedList.printList();
-        linkedList.deleteLastNode();
-        linkedList.printList();
-        linkedList.deleteNodeAtNthPosition(4);
-        linkedList.printList();
     }
 }
