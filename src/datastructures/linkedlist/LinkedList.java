@@ -87,6 +87,15 @@ public class LinkedList {
         System.out.println(temp.data);
     }
 
+    static void printList(Node head){
+        Node temp = head;
+        while(temp.next != null){
+            System.out.print(temp.data+ " ");
+            temp = temp.next;
+        }
+        System.out.println(temp.data);
+    }
+
     void addNodes(int[] nodes) {
         for(int data : nodes){
             addNode(data);
