@@ -44,7 +44,7 @@ public class LList {
     }
 
     int findMiddlePosition() {
-        int i =1;
+        int i = 0;
         Node slow = head;
         Node fast = head.next;
         while (fast.next !=null && fast.next.next != null){
@@ -55,8 +55,17 @@ public class LList {
         return i;
     }
 
-    void insertAtNthPosition(int data){
-
+    void insertAtNthPosition(int n, int data){
+        Node node = new Node(data);
+        Node temp = head;
+        int i = 1 ;
+        while(i!=n && temp.next != null){
+            temp = temp.next;
+            i++;
+        }
+        Node tempNode = temp.next;
+        temp.next = node;
+        temp.next.next = tempNode;
     }
 
     void deleteNodeAtNthPosition(int n){
@@ -117,8 +126,7 @@ public class LList {
         System.out.println(linkedList.findMiddlePosition());
         System.out.println(linkedList.findNthNode(linkedList.findMiddlePosition()));
 
-        linkedList.insertInMiddle(84);
+        linkedList.insertAtNthPosition(3, 29);
         linkedList.printList();
-        System.out.println(linkedList.findNthNode(linkedList.findMiddlePosition()));
     }
 }
