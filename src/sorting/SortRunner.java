@@ -1,4 +1,4 @@
-package sort;
+package sorting;
 
 import static utility.Util.printArray;
 
@@ -12,9 +12,9 @@ public class SortRunner {
         Sort bubbleSort = new BubbleSort();
         Sort insertionSort = new InsertionSort();
 
-//        quickSort.sort(arr, 0, arr.length-1);
-//        selectionSort.sort(arr, 0, arr.length - 1);
-//        bubbleSort.sort(arr, 0, arr.length - 1);
+//        quickSort.sorting(arr, 0, arr.length-1);
+//        selectionSort.sorting(arr, 0, arr.length - 1);
+//        bubbleSort.sorting(arr, 0, arr.length - 1);
         insertionSort.sort(arr, 0, arr.length-1);
         printArray(arr);
     }

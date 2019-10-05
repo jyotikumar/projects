@@ -1,4 +1,4 @@
-package sort;
+package sorting;
 
 import static utility.Util.swap;
 
