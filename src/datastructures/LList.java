@@ -69,7 +69,13 @@ public class LList {
     }
 
     void deleteNodeAtNthPosition(int n){
-
+        Node prevNode = head;
+        for(int i =0; prevNode != null && i<n-1; i++){
+            prevNode = prevNode.next;
+        }
+        Node temp = prevNode.next.next;
+        prevNode.next = null;
+        prevNode.next = temp;
     }
 
     void printList(){
@@ -110,6 +116,20 @@ public class LList {
         }
     }
 
+    void deleteFirstNode() {
+        Node temp = head.next;
+        head.next = null;
+        head = temp;
+    }
+
+    void deleteLastNode(){
+        Node temp = head;
+        while (temp.next!=null && temp.next.next != null){
+            temp = temp.next;
+        }
+        Node preNode = temp;
+        preNode.next = null;
+    }
 
     public static void main(String[] args) {
         LList linkedList = new LList();
@@ -120,13 +140,22 @@ public class LList {
         linkedList.insertAtEnd(33);
         linkedList.insertAtBeginning(20);
 
-
         //Test Result
         linkedList.printList();
         System.out.println(linkedList.findMiddlePosition());
         System.out.println(linkedList.findNthNode(linkedList.findMiddlePosition()));
 
         linkedList.insertAtNthPosition(3, 29);
+        linkedList.printList();
+        linkedList.insertInMiddle(18);
+        linkedList.printList();
+        System.out.println(linkedList.findNthNode(7));
+
+        linkedList.deleteFirstNode();
+        linkedList.printList();
+        linkedList.deleteLastNode();
+        linkedList.printList();
+        linkedList.deleteNodeAtNthPosition(4);
         linkedList.printList();
     }
 }
