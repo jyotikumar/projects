@@ -10,10 +10,12 @@ public class SortRunner {
         Sort quickSort = new QuickSort();
         Sort selectionSort = new SelectionSort();
         Sort bubbleSort = new BubbleSort();
+        Sort insertionSort = new InsertionSort();
 
 //        quickSort.sort(arr, 0, arr.length-1);
-        selectionSort.sort(arr, 0, arr.length - 1);
+//        selectionSort.sort(arr, 0, arr.length - 1);
 //        bubbleSort.sort(arr, 0, arr.length - 1);
+        insertionSort.sort(arr, 0, arr.length-1);
         printArray(arr);
     }
 
