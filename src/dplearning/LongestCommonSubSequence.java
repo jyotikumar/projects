@@ -31,19 +31,23 @@ public class LongestCommonSubSequence {
     }
 
     private static int lCSMyMethod(char[] s1, char[] s2) {
-        int count =0;
-        int k =0;
-        for(int i=0;i<s2.length;i++){
-            int j=k;
-            for(;j<s1.length;j++){
-                if(s2[i] == s1[j]){
-                    k=j+1;
-                    count++;
-                    break;
+        int max = Integer.MIN_VALUE;
+        for(int t=0;t<s2.length;t++) {
+            int count = 0;
+            int k = 0;
+            for (int i = 0; i < s2.length; i++) {
+                int j = k;
+                for (; j < s1.length; j++) {
+                    if (s2[i] == s1[j]) {
+                        k = j + 1;
+                        count++;
+                        break;
+                    }
                 }
             }
+            max = max < count ? count :max;
         }
-      return count;
+        return max;
     }
 
     private static int lCSRec(char[] s1, char[] s2, int m, int n) {
